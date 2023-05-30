@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesion</title>
+</head>
+<body>
+    <div class="cuerpo">
+        <h1>Bienvenido al Anuario de Proyectos del Tecnologico Superior de Jalisco</h1>
+        <p>| Iniciar sesion |</p>
+        <form action="/validaruser" method="get">
+		<input type="text" id="user" name="user" placeholder="Usuario">
+		<input type="password" id="pass" name="pass" placeholder="Contraseña">
+        <div class="btningreso">
+            <button type="submit">Ingresar</a></button>
+        </div>
+        <div class="btnregistro">
+            <p>¿No tienes cuenta?</p>
+            <button type="button"><a href="/Aregistro">Regístrate</a></button>
+        </div>
+        
+        </form>
+    </div>
+    <style>
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cuerpo {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 0;
+}
+
+p {
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btnregistro {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.btnregistro p {
+    margin-bottom: 5px;
+}
+
+.btnregistro button {
+    background-color: #337ab7;
+}
+    </style>
+</body>
+</html>

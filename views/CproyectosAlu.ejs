@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de búsqueda</title>
+    <!-- Agrega la referencia a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        form input[type="text"] {
+            width: 200px;
+        }
+
+        .resultado-item {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .resultado-item h3 {
+            margin-top: 0;
+        }
+
+        .resultado-item p {
+            margin-bottom: 10px;
+        }
+
+        .botones-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .botones-container button {
+            padding: 10px 20px;
+            background-color: #ccc;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .botones-container button a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .botones-container button:hover {
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/buscarproyecto" method="post" class="d-flex justify-content-center">
+            <div class="input-group col-6">
+                <input type="text" class="form-control" name="textoBusqueda" placeholder="Nombre del proyecto o alumno">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+
+    <div class="container">
+        <div class="botones-container">
+            <button type="button" class="btn btn-secondary"><a href="/BinicioAlu">Volver a inicio</a></button>
+            <button type="button" class="btn btn-secondary"><a href="/Eagregarproyecto">Agrega un nuevo proyecto</a></button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-center">
+            <h1>Resultados de búsqueda</h1>
+        </div>
+        <div class="resultado-lista">
+            <%rows.forEach(tblproyectos =>{%>
+            <div class="resultado-item">
+                <h3><%=tblproyectos.nombre%></h3>
+                <p><%=tblproyectos.descripcion%></p>
+                <p>URL: <%=tblproyectos.enlace%></p>
+                <p>Por: <%=tblproyectos.propietario%></p>
+            </div>
+            <%})%>
+        </div>
+    </div>
+
+    <!-- Agrega la referencia a Bootstrap JS (opcional si no necesitas funcionalidad adicional de Bootstrap) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
